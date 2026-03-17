@@ -17,12 +17,12 @@ def create_person_list(people: list) -> list:
         for partner in result_list:
             if partner.name == person["name"]:
                 if "wife" in person.keys() and person["wife"] is not None:
-                    for key_name in result_list:
-                        if person["wife"] == key_name.name:
-                            partner.wife = key_name
+                    for potential_spouse in result_list:
+                        if person["wife"] == potential_spouse.name:
+                            partner.wife = potential_spouse
                 if "husband" in person.keys():
                     if person["husband"] is not None:
-                        for key_name in result_list:
-                            if person["husband"] == key_name.name:
-                                partner.husband = key_name
+                        for potential_spouse in result_list:
+                            if person["husband"] == potential_spouse.name:
+                                partner.husband = potential_spouse
     return result_list
